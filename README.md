@@ -23,7 +23,7 @@ A imagem docker será criada conforme instruções no [DockerFile](Dockerfile)
 ### Executando projeto local
 Criar Imagem docker do projeto: docker build -t toy-store-stock .  
 Executar a Imagem docker localmente: docker run -p 8080:8080 reservei-app  
-Verificar container criado: http://localhost:8080/swagger-ui/index.html#/
+Verificar container criado: http://localhost:8080/stock/swagger-ui/index.html#/
 
 ### Executando projeto via imagem no dockerhub
 #### Criando Imagem no docker hub
