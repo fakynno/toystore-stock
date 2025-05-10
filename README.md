@@ -22,10 +22,28 @@ A imagem docker será criada conforme instruções no [DockerFile](Dockerfile)
 
 ### Executando projeto local
 Criar Imagem docker do projeto: docker build -t toy-store-stock .  
-Executar a Imagem docker localmente: docker run -p 8080:8080 reservei-app  
+Executar a Imagem docker localmente: docker run -p 8080:8080 toy-store-stock  
 Verificar container criado: http://localhost:8080/stock/swagger-ui/index.html#/
 
 ### Executando projeto via imagem no dockerhub
 #### Criando Imagem no docker hub
 Tagueando imagem: docker tag reservei-app:latest majorv22/toy-store-stock:1.0  
 Fazendo deploy no dockerhub: docker push majorv22/toy-store-stock:1.0
+
+### Instruções para execução local 
+1 - Criar uma rede para comunicação entre a aplicação e o mongo
+docker network create toystorerede
+
+2 - Subir container do mongo com a rede criada
+docker run --name mongo-toy-store --network toystorerede -d -p 27017:27017 mongo
+
+3 - Executar container com imagem da aplicação
+```
+docker run `
+  --name app-toy-store-stock `
+  --network toystorerede `
+  -e SPRING_PROFILES_ACTIVE=docker `
+  -e SPRING_DATA_MONGODB_URI=mongodb://mongo-toy-store:27017/stock `
+  -d -p 8080:8080 `
+  toy-store-stock
+```
