@@ -18,7 +18,7 @@ public class StockServiceImpl implements StockService{
     @Override
     public StockModel buscarPorId(String id) {
         return stockRepository.findById(id)
-                .orElseThrow(() -> new StockNotFoundException("Não encontrado"));
+                .orElseThrow(() -> new StockNotFoundException("Estoque com código " + id + " não encontrado."));
     }
 
     @Override
