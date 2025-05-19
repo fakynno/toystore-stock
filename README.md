@@ -7,7 +7,7 @@
 
 ## Sobre este projeto
 #### Este Microserviço cuida da gestão de estoque da aplicação toy-store
-![Documentação do Projeto](assets/Documentação-Projeto.png)
+![Documentação do Projeto](assets/Doc-Estoque.png)
 
 
 ## Documentação sobre mongo
