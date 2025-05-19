@@ -70,6 +70,5 @@ docker run `
   Verificar arquivo: Maven: target/site/jacoco/index.html
 
 4 - Execução dos testes  
-Relatório JaCoCo gerado em: [target/site/jacoco](target/site/jacoco/index.html)
 ![Cobertura de Testes](assets/Cobertura-Jacoco.png)
 
