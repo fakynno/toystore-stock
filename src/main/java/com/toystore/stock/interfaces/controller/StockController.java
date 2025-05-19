@@ -1,7 +1,7 @@
 package com.toystore.stock.interfaces.controller;
 
 import com.toystore.stock.application.usecases.stock.StockService;
-import com.toystore.stock.domain.DTO.DebitoEstoqueDTO;
+import com.toystore.stock.application.dto.DebitoEstoqueDTO;
 import com.toystore.stock.domain.model.StockModel;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/api")

@@ -1,4 +1,4 @@
-package com.toystore.stock.domain.DTO;
+package com.toystore.stock.application.dto;
 
 public class DebitoEstoqueDTO {
     private int quantidadeSolicitada;
