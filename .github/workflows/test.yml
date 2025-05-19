@@ -14,11 +14,12 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: Setup JDK
+      - name: Configurar JDK 21 (Amazon Corretto)
         uses: actions/setup-java@v3
         with:
-          java-version: '23'
-          distribution: 'temurin'
+          distribution: 'corretto'
+          java-version: '21'
+          cache: maven
 
       - name: Build e Testes com cobertura
         run: mvn clean verify
