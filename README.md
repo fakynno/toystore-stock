@@ -33,7 +33,7 @@ Verificar container criado: http://localhost:8080/stock/swagger-ui/index.html#/
 
 ### Executando projeto via imagem no dockerhub
 #### Criando Imagem no docker hub
-Tagueando imagem: docker tag reservei-app:latest majorv22/toy-store-stock:1.0  
+Tagueando imagem: docker tag toy-store-stock:latest majorv22/toy-store-stock:1.0  
 Fazendo deploy no dockerhub: docker push majorv22/toy-store-stock:1.0
 
 ### Instruções para execução local 
@@ -51,7 +51,7 @@ docker run `
   -e SPRING_PROFILES_ACTIVE=docker `
   -e SPRING_DATA_MONGODB_URI=mongodb://mongo-toy-store:27017/stock `
   -d -p 8080:8080 `
-  toy-store-stock
+  majorv22/toy-store-stock:1.0
 ```
 
 ## Executando testes com Jacoco
