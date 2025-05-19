@@ -18,6 +18,10 @@ public class StockController {
     @Autowired
     private StockService stockService;
 
+    public StockController(StockService stockService) {
+        this.stockService = stockService;
+    }
+
     @PostMapping
     public ResponseEntity<StockModel> criar(@RequestBody @Valid StockModel stockModel) {
         var stockCreated = this.stockService.criar(stockModel);

@@ -18,6 +18,10 @@ public class StockServiceImpl implements StockService{
     @Autowired
     private StockRepository stockRepository;
 
+    public StockServiceImpl(StockRepository stockRepository) {
+        this.stockRepository = stockRepository;
+    }
+
     @Override
     public StockModel buscarPorId(String id) {
         return stockRepository.findById(id)
