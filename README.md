@@ -47,3 +47,16 @@ docker run `
   -d -p 8080:8080 `
   toy-store-stock
 ```
+
+## Executando testes com Jacoco
+
+### Utilização do Jacoco
+1 - Colocar Jacoco no projeto com maven  
+  link:https://www.eclemma.org/jacoco/  
+  Versão utilizada: 0.8.14
+  Cobertura mínima: 80%  
+  OBS: Inserido no projeto via plugin
+
+2 - Testando projeto  
+  Executar comando: mvn clean verify
+
