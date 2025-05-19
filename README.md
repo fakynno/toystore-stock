@@ -5,6 +5,10 @@
 - [🚀 Executando o Projeto com Docker](#executando-o-projeto-com-docker)
 - [✅ Executando Testes com JaCoCo](#executando-testes-com-jacoco)
 
+## Sobre este projeto
+#### Este Microserviço cuida da gestão de estoque da aplicação toy-store
+![Documentação do Projeto](assets/Documentação-Projeto.png)
+
 
 ## Documentação sobre mongo
 #### https://spring.io/projects/spring-data-mongodb
