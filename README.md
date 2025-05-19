@@ -64,5 +64,5 @@ docker run `
   Verificar arquivo: Maven: target/site/jacoco/index.html
 
 4 - Execução dos testes  
-![Cobertura de Testes](src/main/resources/TestesJacoco/Cobertura de testes Jacoco.png)
+![Cobertura de Testes](assets/Cobertura-Jacoco.png)
 
