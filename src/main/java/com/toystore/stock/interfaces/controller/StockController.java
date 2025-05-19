@@ -1,6 +1,7 @@
 package com.toystore.stock.interfaces.controller;
 
 import com.toystore.stock.application.usecases.stock.StockService;
+import com.toystore.stock.domain.DTO.DebitoEstoqueDTO;
 import com.toystore.stock.domain.model.StockModel;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,18 @@ public class StockController {
     public ResponseEntity<String> deletarStockPorId(@PathVariable String id){
         this.stockService.deletar(id);
         return ResponseEntity.ok("Estoque excluído com sucesso");
+    }
+
+    @GetMapping("/produtos/{produtoId}")
+    public ResponseEntity<StockModel> obterEstoquePorProdutoId(@PathVariable String produtoId) {
+        return ResponseEntity.ok(this.stockService.buscarPorProdutoId(produtoId));
+    }
+
+    @PutMapping("/produtos/{produtoId}")
+    public ResponseEntity<String> debitarEstoque(@PathVariable String produtoId, @RequestBody DebitoEstoqueDTO quantidadeSolicitada) {
+
+        String resposta = stockService.debitarEstoque(produtoId, quantidadeSolicitada.getQuantidadeSolicitada());
+        return ResponseEntity.ok(resposta);
     }
 
 

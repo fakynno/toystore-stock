@@ -60,3 +60,6 @@ docker run `
 2 - Testando projeto  
   Executar comando: mvn clean verify
 
+3 - Validando report  
+  Verificar arquivo: Maven: target/site/jacoco/index.html
+

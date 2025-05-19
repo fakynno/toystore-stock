@@ -11,5 +11,6 @@ public interface StockService {
     public StockModel criar(StockModel stockModel);
     public void atualizar(String id, StockModel stockModel);
     public void deletar(String id);
-
+    public StockModel buscarPorProdutoId(String produtoId);
+    public String debitarEstoque(String produtoId, int quantidade);
 }
