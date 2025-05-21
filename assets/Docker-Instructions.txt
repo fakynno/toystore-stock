@@ -29,17 +29,20 @@ docker run  -d -p 8082:8080 `
   majorv22/toy-store-stock:1.0
 
 
---Cliente ---RETIRAR COMPOSE
-//NECESSÁRIO POSTGRES
+--Cliente
+//NECESSÁRIO POSTGRE
 docker pull evaldofires/toystore-customer-app:1.0.2
-docker run -p 8083:8080 evaldofires/toystore-customer-app:1.0.2
+docker run -d --name toystore-customer-app -p 8083:8080 --network toystorerede -e SPRING_PROFILES_ACTIVE=docker evaldofires/toystore-customer-app:1.0.2
 
 --Produtos
+//UTILIZANDO H2
 docker pull fakynno/toy-store-product:1.0
-docker run -p 8080:8080 fakynno/toy-store-product:1.0 --network toystorerede
+docker run -d --name app-toy-store-product -p 8084:8080 --name app-toy-store-product fakynno/toy-store-product:1.0 --network toystorerede
 
 
 --Pedido-Service
-//NECESSÁRIO POSTGRES
+//NECESSÁRIO POSTGRE
+//NECESSÁRIO MONGO
+//NECESSÁRIO RABBIT MQ
 docker run -d --name pedido-service -p 8080:8080 --network toystorerede -e DB_HOST=postgres-toy-store -e MONGO_HOST=mongo-toy-store -e RABBIT_HOST=rabbitmq-toy-store pedido-service
 
