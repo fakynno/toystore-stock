@@ -1,0 +1,384 @@
+type: collection.insomnia.rest/5.0
+name: FIAP
+meta:
+  id: wrk_53a05fa9f5164235a0ff35489a496440
+  created: 1730577668321
+  modified: 1730577668321
+collection:
+  - name: 1 - Pet-Tech (init)
+    meta:
+      id: fld_0af608ddc35144279d10de84943eb995
+      created: 1730577706644
+      modified: 1743468195834
+      sortKey: -1735325605126
+  - name: 2 - Tech-Challenge-1
+    meta:
+      id: fld_75e251b1b53b4b62835edb3b3a752a47
+      created: 1730748471551
+      modified: 1743468193814
+      sortKey: -1735325605026
+  - name: 3 - Blog Mongo
+    meta:
+      id: fld_73bdcb4e5d594d3c94fd4dc5508acf62
+      created: 1733872586972
+      modified: 1743468190497
+      sortKey: -1735325604926
+    children:
+      - name: Artigo
+        meta:
+          id: fld_defcf96a1c9440eabe92e61d25c50667
+          created: 1733875249118
+          modified: 1733875249118
+          sortKey: -1733875249118
+        children:
+          - name: QueryMethods
+            meta:
+              id: fld_6114011dc2234a9594e67de3375c86d9
+              created: 1734391678752
+              modified: 1734391678752
+              sortKey: -1734391678753
+          - name: Basic Methods
+            meta:
+              id: fld_ff41e212a6f4408c95e6b3bd7f83d951
+              created: 1734391695510
+              modified: 1734391695510
+              sortKey: -1734391695510
+      - name: Autor
+        meta:
+          id: fld_57b70ffa5cd142a2965894d5e39e0ea5
+          created: 1733877170482
+          modified: 1733877170482
+          sortKey: -1733877170482
+  - name: 5 - Tratando erros MongoDB
+    meta:
+      id: fld_819edc51473e49228b9f3b93824b9653
+      created: 1735325604126
+      modified: 1743468188074
+      sortKey: -1735325604826
+  - name: 5.1 - Tech-Challenge - Peter Parking API
+    meta:
+      id: fld_70dbf8264ba241b790284f93a2e59f0a
+      created: 1736894581146
+      modified: 1743468185025
+      sortKey: -1735325604726
+      description: API para Gestao de Parquimetros, Carros e Pessoas
+    children:
+      - name: zona
+        meta:
+          id: fld_8446263fbf5e4871aea5ca39cd39c98a
+          created: 1736894581150
+          modified: 1736894581150
+          sortKey: -1736894578087
+      - name: pessoa
+        meta:
+          id: fld_ffcfb058a9b44c7a905ff5f9a21bd95c
+          created: 1736894581166
+          modified: 1736894581166
+          sortKey: -1736894578080
+      - name: parquimetro
+        meta:
+          id: fld_21d8818e431e423badadda9b01f92542
+          created: 1736894581181
+          modified: 1736894581181
+          sortKey: -1736894578073
+      - name: carro
+        meta:
+          id: fld_ed0d4faea9ba4a5f83ac465ffbff5dc9
+          created: 1736894581194
+          modified: 1736894581194
+          sortKey: -1736894578066
+    environment:
+      baseUrl: http://localhost:8080/parquimetro-api
+  - name: 6 - Qualidade de software
+    meta:
+      id: fld_71b0ca27319b4449ac97c8c0f4ce2073
+      created: 1743468068100
+      modified: 1746903155791
+      sortKey: -1735325604626
+  - name: 7 - Tech-Challenge - ToyStore
+    meta:
+      id: fld_f163f6dbc332447a885e47f12a482677
+      created: 1746903145880
+      modified: 1746903153079
+      sortKey: -1735325604526
+    children:
+      - name: Stock
+        meta:
+          id: fld_34e10bd0350e4affa3ce23bf81e7f123
+          created: 1746903182387
+          modified: 1746903186318
+          sortKey: -1746903186244
+        children:
+          - url: http://localhost:8080/stock/api/681fc5a68d0e3e30e6541c0c
+            name: Get Stock By ID
+            meta:
+              id: req_d3150eefbbf54deea7be7ea499e66542
+              created: 1746903193506
+              modified: 1747633799089
+              isPrivate: false
+              sortKey: -1746903193506
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api
+            name: Create Stock
+            meta:
+              id: req_ac076f988c814fac9a2154fab0662d22
+              created: 1746903680597
+              modified: 1747615874279
+              isPrivate: false
+              sortKey: -1746903193606
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"produtoId": "2f5715c8-1e73-4450-9578-a1f5f64553cf",
+                	"quantidadeDisponivel": 114
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api
+            name: Get All Stock
+            meta:
+              id: req_6e61c3fe4cb740eb856b0039327d1315
+              created: 1746906016878
+              modified: 1746906292122
+              isPrivate: false
+              sortKey: -1741898885796
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api/681fc5a68d0e3e30e6541c0c
+            name: PUT Stock - Sucesso
+            meta:
+              id: req_ca594ea7723f46e79aad62ee19fbc812
+              created: 1746907283186
+              modified: 1747633809604
+              isPrivate: false
+              sortKey: -1739396731941
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"produtoId": "0c4364b2-0e6a-4e0c-ab8a-55300236f251",
+                		"quantidadeDisponivel": 101
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api/381fa2fbb89d651305a1058b
+            name: PUT Stock - NotFound
+            meta:
+              id: req_e87d409c23c2401cbc973203ea718cab
+              created: 1746907738678
+              modified: 1746908587065
+              isPrivate: false
+              sortKey: -1738145655013.5
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"produtoId": "0c4364b2-0e6a-4e0c-ab8a-55300236f251",
+                		"quantidadeDisponivel": 123
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api/681fa6eed14650135322069c
+            name: DELETE Stock
+            meta:
+              id: req_4a119d8a77bc4e72a21fd4dc3dd68202
+              created: 1746908880042
+              modified: 1746908990349
+              isPrivate: false
+              sortKey: -1737520116549.75
+            method: DELETE
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"produtoId": "0c4364b2-0e6a-4e0c-ab8a-55300236f251",
+                		"quantidadeDisponivel": 123
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api/produtos/afb0c450-c0ba-496e-b8b2-71acc340bd21
+            name: Get Stock By produtoId
+            meta:
+              id: req_69327b40676d43b494abdedcc1bafe4d
+              created: 1747616228409
+              modified: 1747617905902
+              isPrivate: false
+              sortKey: -1737832885781.625
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api/produtos/0c4364b2-0e6a-4e0c-ab8a-55300236f251
+            name: PUT Stock by produtoId - Sucesso
+            meta:
+              id: req_156a90a984eb4c8ca8775a54f9c23810
+              created: 1747616248263
+              modified: 1747633845645
+              isPrivate: false
+              sortKey: -1737676501165.6875
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"quantidadeSolicitada": 37
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api/produtos/123
+            name: PUT Stock by produtoId - Produto Não Encontrado
+            meta:
+              id: req_63a706bc13034854951c3838f35b1220
+              created: 1747616911461
+              modified: 1747616916204
+              isPrivate: false
+              sortKey: -1737598308857.7188
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"quantidadeSolicitada": 70
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8080/stock/api/produtos/afb0c450-c0ba-496e-b8b2-71acc340bd21
+            name: PUT Stock by produtoId - Quantidade Insuficiente
+            meta:
+              id: req_861d4cad7e77494ab61915e11b74be60
+              created: 1747616938097
+              modified: 1747616952784
+              isPrivate: false
+              sortKey: -1737559212703.7344
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"quantidadeSolicitada": 70000
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5e475a1d56bbb87fe071cb2a44506c22a9bbe943
+    created: 1730577668327
+    modified: 1730577668327
+environments:
+  name: Base Environment
+  meta:
+    id: env_5e475a1d56bbb87fe071cb2a44506c22a9bbe943
+    created: 1730577668324
+    modified: 1730577668324
+    isPrivate: false

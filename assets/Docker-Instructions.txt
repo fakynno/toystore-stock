@@ -4,17 +4,22 @@ docker network create toystorerede
 --Mongo
 docker run --name mongo-toy-store --network toystorerede -d -p 27017:27017 mongo
 
+--Postgre
+docker run -d --name postgres-toy-store --network toystorerede -e DB_HOST=postgres-toy-store -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
+
 
 --Pagamentos
-docker pull 1moninfernando/toy-store-apppag:1.0
+//NECESSÁRIO MONGO
+docker pull 1moninfernando/toy-store-apppag:1.5
 docker run -d -p 8081:8080 `
   --name toy-store-Pagamento `
   --network toystorerede `
   -e SPRING_DATA_MONGODB_URI=mongodb://mongo-toy-store:27017/pagamentos `
-  1moninfernando/toy-store-apppag:1.0
+  1moninfernando/toy-store-apppag:1.5
 
 
 --Estoque
+//NECESSÁRIO MONGO
 docker pull majorv22/toy-store-stock:1.0
 docker run  -d -p 8082:8080 `
   --name app-toy-store-stock `
@@ -24,15 +29,17 @@ docker run  -d -p 8082:8080 `
   majorv22/toy-store-stock:1.0
 
 
---Pedido-Service
+--Cliente ---RETIRAR COMPOSE
+//NECESSÁRIO POSTGRES
+docker pull evaldofires/toystore-customer-app:1.0.2
+docker run -p 8083:8080 evaldofires/toystore-customer-app:1.0.2
 
-docker run -p 8080:8080 `
-  --name pedido-service `
-  --network toystorerede `
-  -e SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-toy-store:5432/pedidos `
-  -e SPRING_DATASOURCE_USERNAME=postgres `
-  -e SPRING_DATASOURCE_PASSWORD=postgres `
-  -e SPRING_DATA_MONGODB_URI=mongodb://mongo-toy-store:27017/pedidos `
-  -e SPRING_RABBITMQ_HOST=rabbitmq-toy-store `
-  pedido-service
+--Produtos
+docker pull fakynno/toy-store-product:1.0
+docker run -p 8080:8080 fakynno/toy-store-product:1.0 --network toystorerede
+
+
+--Pedido-Service
+//NECESSÁRIO POSTGRES
+docker run -d --name pedido-service -p 8080:8080 --network toystorerede -e DB_HOST=postgres-toy-store -e MONGO_HOST=mongo-toy-store -e RABBIT_HOST=rabbitmq-toy-store pedido-service
 
