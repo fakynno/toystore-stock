@@ -20,6 +20,7 @@ docker run -d -p 8081:8080 `
 
 --Estoque
 //NECESSÁRIO MONGO
+PATH: /stock
 docker pull majorv22/toy-store-stock:1.0
 docker run  -d -p 8082:8080 `
   --name app-toy-store-stock `
@@ -31,6 +32,7 @@ docker run  -d -p 8082:8080 `
 
 --Cliente
 //NECESSÁRIO POSTGRE
+PATH: /customer
 docker pull evaldofires/toystore-customer-app:1.0.2
 docker run -d --name toystore-customer-app -p 8083:8080 --network toystorerede -e SPRING_PROFILES_ACTIVE=docker evaldofires/toystore-customer-app:1.0.2
 
