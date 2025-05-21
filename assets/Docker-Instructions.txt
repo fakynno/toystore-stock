@@ -54,5 +54,5 @@ docker run -d --name app-toy-store-product -p 8084:8080 --name app-toy-store-pro
 //NECESSÁRIO RABBIT MQ
 PATH: /customer
 //Repo: https://github.com/marcelonidal/pedidos
-docker pull marcelonidal/pedido-service
-docker run -d --name pedido-service -p 8080:8080 --network toystorerede -e DB_HOST=postgres-toy-store -e MONGO_HOST=mongo-toy-store -e RABBIT_HOST=rabbitmq-toy-store marcelonidal/pedido-service:latest
+docker pull marcelonidal/pedido-service:1.0
+docker run -d --name pedido-service -p 8080:8080 --network toystorerede -e DB_HOST=postgres-toy-store -e MONGO_HOST=mongo-toy-store -e RABBIT_HOST=rabbitmq-toy-store -e HOST_CLIENTE=toystore-customer-app:8080 -e HOST_PRODUTO=app-toy-store-product:8080 -e HOST_ESTOQUE=app-toy-store-stock:8080 -e HOST_PAGAMENTO=toy-store-Pagamento:8080 marcelonidal/pedido-service:1.0
